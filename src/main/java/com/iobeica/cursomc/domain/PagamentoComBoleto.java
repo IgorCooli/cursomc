@@ -2,30 +2,32 @@ package com.iobeica.cursomc.domain;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+
 import com.iobeica.cursomc.domain.enums.EstadoPagamento;
 
-public class PagamentoComBoleto extends Pagamento{
+@Entity
+public class PagamentoComBoleto extends Pagamento {
 	private static final long serialVersionUID = 1L;
-	
-	private Date dataVenciomento;
+
+	private Date dataVencimento;
 	private Date dataPagamento;
-	
+
 	public PagamentoComBoleto() {
-		super();
 	}
 
 	public PagamentoComBoleto(Integer id, EstadoPagamento estado, Pedido pedido, Date dataVencimento, Date dataPagamento) {
 		super(id, estado, pedido);
 		this.dataPagamento = dataPagamento;
-		this.dataVenciomento = dataVencimento;
+		this.dataVencimento = dataVencimento;
 	}
 
-	public Date getDataVenciomento() {
-		return dataVenciomento;
+	public Date getDataVencimento() {
+		return dataVencimento;
 	}
 
-	public void setDataVenciomento(Date dataVenciomento) {
-		this.dataVenciomento = dataVenciomento;
+	public void setDataVencimento(Date dataVencimento) {
+		this.dataVencimento = dataVencimento;
 	}
 
 	public Date getDataPagamento() {
@@ -34,8 +36,6 @@ public class PagamentoComBoleto extends Pagamento{
 
 	public void setDataPagamento(Date dataPagamento) {
 		this.dataPagamento = dataPagamento;
-	}
-	
-	
+	}	
 
 }
